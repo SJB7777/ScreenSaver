@@ -9,7 +9,8 @@
 enum ApplicationStates {
 	KIM,
 	LEE,
-	YONG
+	YONG,
+	LEE2
 };
 
 int ApplicationState = ApplicationStates::KIM;
@@ -45,7 +46,10 @@ void ofApp::update(){
 		yong.update();
 		
 		break;
+	case ApplicationStates::LEE2:
+		lee.update();
 
+		break;
 	}
 	
 	
@@ -67,7 +71,10 @@ void ofApp::draw(){
 		yong.draw();
 		
 		break;
+	case ApplicationStates::LEE2:
+		lee.draw();
 
+		break;
 	}
 	
 	
@@ -81,10 +88,10 @@ void ofApp::keyPressed(int key){
 	
 	switch (key) {
 	case OF_KEY_RIGHT:
-		ApplicationState = (ApplicationState + 1) % 3;
+		ApplicationState = (ApplicationState + 1) % 4;
 		break;
 	case OF_KEY_LEFT:
-		ApplicationState = (ApplicationState + 2) % 3;
+		ApplicationState = (ApplicationState + 3) % 4;
 		break;
 	}
 }
@@ -110,6 +117,9 @@ void ofApp::mouseDragged(int x, int y, int button){
 		break;
 	case ApplicationStates::YONG:
 		break;
+	case ApplicationStates::LEE2:
+
+		break;
 
 	}
 }
@@ -121,7 +131,7 @@ void ofApp::mousePressed(int x, int y, int button){
 		kim.mousePressed(x, y, button);
 		break;
 	case ApplicationStates::LEE:
-		lee.mousePressed(x, y, button);
+		//lee.mousePressed(x, y, button);
 		break;
 	case ApplicationStates::YONG:
 		break;

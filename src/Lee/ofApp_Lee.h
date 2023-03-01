@@ -34,5 +34,6 @@ class ofApp_Lee : public ofBaseApp{
 		float angle = 0; // 진자 운동 구현하기 위한, 각도 변수
 		int check; // 진자 운동을 표현할 때, 양쪽 끝에 도달했고, 이제 반대 방향으로 가야함을 나타내는 변수
 
-		int sc_change; // 화면보호기 교체 변수
 };
+
+extern int ApplicationState;

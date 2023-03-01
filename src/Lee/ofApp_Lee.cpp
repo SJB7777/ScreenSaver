@@ -12,9 +12,9 @@ void ofApp_Lee::update(){
 
 //--------------------------------------------------------------
 void ofApp_Lee::draw(){
-	if (sc_change == 0)
+	if (ApplicationState % 4 == 1)
 		screen_save(); // 화면보호기 1번 함수 호출
-	else
+	else if(ApplicationState % 4 == 3)
 		screen_save2(); // 화면보호기 2번 함수 호출
 }
 
@@ -40,10 +40,7 @@ void ofApp_Lee::mouseDragged(int x, int y, int button){
 
 //--------------------------------------------------------------
 void ofApp_Lee::mousePressed(int x, int y, int button){
-	if (sc_change == 0) // 화면보호기 1번 진행중일 때, 마우스 클릭하면
-		sc_change = 1; // sc_change 값 1로 수정
-	else if (sc_change == 1)  // 화면보호기 2번 진행중일 때, 마우스 클릭하면
-		sc_change = 0; // sc_change 값 0으로 수정
+
 }
 
 //--------------------------------------------------------------
@@ -139,6 +136,5 @@ void ofApp_Lee::init() {
 	yPos = ofGetHeight() / 2; // 구의 y좌표 기준 값을, 화면 높이 중간에 위치하도록 설정
 	xDir = 4; // x축 방향 움직이는 정도(속도)를 4로 설정
 	yDir = 4; // y축 방향 움직이는 정도(속도)를 4로 설정
-	sc_change = 0; // 화면보호기 1번이 먼저 실행되도록, sc_change 변수 값 0으로 설정
 	check = 0; // 화면보호기 2번의 초기 진행과정에서, 진자 운동이 오른쪽으로 움직이게 하기 위해, check 변수 값 0으로 설정
 }
